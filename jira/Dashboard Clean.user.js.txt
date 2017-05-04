@@ -1,0 +1,18 @@
+// ==UserScript==
+// @name         Dashboard Clean
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Clean up the JIRA dashboard
+// @author       Richard Rulach
+// @match        http://192.168.145.127:8080/secure/Dashboard.jspa*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    var a = document.getElementsByClassName('dashboard-item-header');
+    for (var i = 0; i < a.length; i++){
+        a[i].innerHTML = a[i].innerHTML.replace(/Filter Results\: Richard R /,'');  
+        a[i].innerHTML = a[i].innerHTML.replace(/Filter Results\: Richard2 - /,'');  
+    }
+})();
